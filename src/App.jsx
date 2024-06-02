@@ -6,10 +6,10 @@ import Card from "./components/Card";
 const App = () => {
   const { themeMode } = useContext(ThemeContext);
 
-  useEffect(() => {
-    document.querySelector('html').classList.remove("light", "dark");
-    document.querySelector('html').classList.add(themeMode);
-  }, [themeMode]);
+  // useEffect(() => {
+  //   document.querySelector('html').classList.remove("light", "dark");//remove thes
+  //   document.querySelector('html').classList.add(themeMode); //add classes
+  // }, [themeMode]);
 
   return (
     <div className="flex flex-wrap min-h-screen items-center">

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState,useEffect } from "react";
 
 // Create the context
 export const ThemeContext = createContext();
@@ -9,6 +9,13 @@ export const ThemeContextProvider = ({ children }) => {
 
   const lightTheme = () => setThemeMode("light");
   const darkTheme = () => setThemeMode("dark");
+
+
+  //we can write here also
+  useEffect(() => {
+    document.querySelector('html').classList.remove("light", "dark");//remove thes
+    document.querySelector('html').classList.add(themeMode); //add classes
+  }, [themeMode]);
 
   // Define the value that will be provided to consumers
   const value = { themeMode, lightTheme, darkTheme };
